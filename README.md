@@ -21,4 +21,5 @@ Custom Alpine Appliance for GNS3
   - allow root ssh login: ```yes```
   - use ```sda1```
   - use sda1 as ```sys```
-  - erase disk ```yes```
+  - erase disk ```yes```, will take a while to set up...
+  - ```halt```
