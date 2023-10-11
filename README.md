@@ -28,8 +28,9 @@ Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
 - change welcome message (motd): ```echo "Hallo. Das ist Alpine Linux..." > /etc/motd```
 - change available repos: ```nano /etc/apk/repositories```, add / uncomment lines:
   ```
-  http://dl-cdn.alpinelinux.org/alpine/v3.18/community 
-  http://dl-cdn.alpinelinux.org/alpine/v3.18/testing  
+  http://dl-cdn.alpinelinux.org/alpine/v3.18/main
+  http://dl-cdn.alpinelinux.org/alpine/v3.18/community
+  http://dl-cdn.alpinelinux.org/alpine/edge/testing
   ``` 
 - add packages: ```apk add nano mc bonding iperf3 agetty```
 - add apk-autoupdate (need to add from edge repo):
