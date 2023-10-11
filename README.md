@@ -1,6 +1,7 @@
 # AlpineLinuxForGNS3
 Custom Alpine Appliance for GNS3
 Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
+See also: https://www.uni-koeln.de/~pbogusze/posts/Building_64bit_alpine_linux_GNS3_FRRouting_appliance.html
 
 - check latest version: https://alpinelinux.org/downloads/
 - Download Alpine Image: ```wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-virt-3.18.4-x86_64.iso -P /tmp```
