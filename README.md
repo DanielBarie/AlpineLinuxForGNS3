@@ -34,6 +34,9 @@ Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
 - add packages: ```apk add nano mc bonding iperf3 agetty```
 - add apk-autoupdate (need to add from edge repo):
   - ```apk add apk-autoupdate --update-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted```
+  - make it run one a day:
+    - ```cd /etc/periodic/daily```
+    - ```ln -s /usr/sbin/apk-autoupdate ./```
 - add bmon (bandwidth monitor):
   - ```apk add apk-autoupdate --update-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted```
 - add ifupdown-nw (for gns3): (should work from repos added above, if not, install from edge/community)
