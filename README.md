@@ -55,4 +55,8 @@ Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
   iface eth1 inet dhcp
 
   ```
+- remove root password (for autologin, will run as network appliance...): ```nano /etc/passwd```, remove ```x``` in user root's line:
+  ```root:x:0:0:root:/root:/bin/ash```
+  becomes
+  ```root::0:0:root:/root:/bin/ash```
 - 
