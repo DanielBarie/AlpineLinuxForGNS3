@@ -61,4 +61,15 @@ Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
   ```root:x:0:0:root:/root:/bin/ash```
   becomes
   ```root::0:0:root:/root:/bin/ash```
+- Passwordless auto-login: Change highlighted line:
+![grafik](https://github.com/DanielBarie/AlpineLinuxForGNS3/assets/73287620/8b953681-41bd-4724-bf7c-2e93081c8cce)  
+  to become
+  ```
+  ttyS0::respawn:/sbin/agetty -a root --noissue -L ttyS0 115200 vt100
+  ```
+- Lower boot wait: ```nano /boot/extlinux.conf``` change highlighted line as shown:
+  ![grafik](https://github.com/DanielBarie/AlpineLinuxForGNS3/assets/73287620/99b5fb6a-fe87-47b1-b788-0058f04035fe)
+
 - 
+Nice, we now have a 155MB custom Alpine Linux Image for our network lab.  
+![grafik](https://github.com/DanielBarie/AlpineLinuxForGNS3/assets/73287620/9a815000-8a69-4b81-a696-8c47a55424d1)
