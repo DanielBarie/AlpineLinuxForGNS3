@@ -23,3 +23,10 @@ Custom Alpine Appliance for GNS3
   - use sda1 as ```sys```
   - erase disk ```yes```, will take a while to set up...
   - ```halt```
+- boot: ```qemu-system-x86_64 -boot c -hda ~/GNS3/images/QEMU/alpine_custom.qcow2 -enable-kvm -m 1G -serial telnet:localhost:4321,server,nowait -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-pci,rng=rng0 &```
+- add packages: ```apk add nano mc bonding iperf3
+- add apk-autoupdate (need to add from edge repo):
+  - ```apk add apk-autoupdate --update-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted```
+- add bmon (bandwidth monitor):
+  - ```apk add apk-autoupdate --update-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted```
+
