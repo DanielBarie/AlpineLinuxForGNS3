@@ -25,6 +25,8 @@ Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
   - erase disk ```yes```, will take a while to set up...
   - ```halt```
 - boot: ```qemu-system-x86_64 -boot c -hda ~/GNS3/images/QEMU/alpine_custom.qcow2 -enable-kvm -m 1G -serial telnet:localhost:4321,server,nowait -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-pci,rng=rng0 &```
+![grafik](https://github.com/DanielBarie/AlpineLinuxForGNS3/assets/73287620/96a124bf-f500-4e6d-a0e9-1ef3715c7968)
+
 - change welcome message (motd): ```echo "Hallo. Das ist Alpine Linux..." > /etc/motd```
 - change available repos: ```nano /etc/apk/repositories```, add / uncomment lines:
   ```
