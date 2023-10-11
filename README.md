@@ -1,5 +1,6 @@
 # AlpineLinuxForGNS3
 Custom Alpine Appliance for GNS3
+Along the lines of https://wiki.alpinelinux.org/wiki/Install_Alpine_in_QEMU
 
 - check latest version: https://alpinelinux.org/downloads/
 - Download Alpine Image: ```wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-virt-3.18.4-x86_64.iso -P /tmp```
@@ -25,9 +26,29 @@ Custom Alpine Appliance for GNS3
   - ```halt```
 - boot: ```qemu-system-x86_64 -boot c -hda ~/GNS3/images/QEMU/alpine_custom.qcow2 -enable-kvm -m 1G -serial telnet:localhost:4321,server,nowait -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-pci,rng=rng0 &```
 - change welcome message (motd): ```echo "Hallo. Das ist Alpine Linux..." > /etc/motd```
-- add packages: ```apk add nano mc bonding iperf3
+- change available repos: ```nano /etc/apk/repositories```, add / uncomment lines:
+  ```
+  http://dl-cdn.alpinelinux.org/alpine/v3.18/community 
+  http://dl-cdn.alpinelinux.org/alpine/v3.18/testing  
+  ``` 
+- add packages: ```apk add nano mc bonding iperf3 agetty```
 - add apk-autoupdate (need to add from edge repo):
   - ```apk add apk-autoupdate --update-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted```
 - add bmon (bandwidth monitor):
   - ```apk add apk-autoupdate --update-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted```
+- add ifupdown-nw (for gns3): (should work from repos added above, if not, install from edge/community)
+  - ```apk add ifupdown-ng```
+- add another interface, edit ```/etc/network/interfaces```:
+  - ```nano /etc/network/interfaces```
+  ```
+  auto lo
+  iface lo inet loopback
+  
+  auto eth0
+  iface eth0 inet dhcp
+  
+  auto eth1
+  iface eth1 inet dhcp
 
+  ```
+- 
